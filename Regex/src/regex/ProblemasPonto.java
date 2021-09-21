@@ -1,0 +1,20 @@
+package regex;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ProblemasPonto {
+
+	public static void main(String[] args) {
+		String texto = "Bom\nDia";
+
+		String regex = ".";
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(texto);
+		while (m.find()) {
+			System.out.print(m.group() + "," + " ");
+		}
+
+	}
+
+}
