@@ -1,0 +1,21 @@
+package receitas;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Senha {
+	public static void main(String[] args) {
+		String texto = "123456\r\n" + "cod3r\r\n" + "QUASE123!\r\n" + "#OpA1\r\n" + "#essaSenhaEGrande1234\r\n"
+				+ "#OpA1?\r\n" + "Foi123!";
+		
+		String regex = "(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%!^&*]).{6,20}";
+		
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(texto);
+		
+		while(m.find()) {
+			System.out.println(m.group());
+		}
+	}
+
+}
